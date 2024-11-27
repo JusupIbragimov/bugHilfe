@@ -1,0 +1,285 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  color: white;
+  overflow-x: hidden;
+}
+
+.container {
+  position: relative;
+  padding: 50px;
+  background-color: black;
+  height: 100vh;
+}
+
+.text-layer {
+  position: relative;
+  max-width: 90%;
+  line-height: 1.5;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #fff;
+  font-size: 2.5vw;
+}
+
+.text-layer span {
+  display: inline-block;
+  margin: 10px;
+  mix-blend-mode: lighten;
+  background: -webkit-linear-gradient(#3f5efb, #fc466b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-color: red !important;
+  opacity: 0.9;
+  animation: float 6s infinite alternate;
+}
+
+.text-layer span:nth-child(even) {
+  color: white;
+  font-size: 2.7vw;
+}
+
+@keyframes float {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-20px);
+  }
+}
+
+.footer-text {
+  position: absolute;
+  bottom: 10%;
+  text-align: center;
+}
+
+.footer-text h1 {
+  font-size: 3vw;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.footer-text p {
+  margin: 0;
+  font-size: 1.5vw;
+  font-style: italic;
+}
+
+.footer-text .highlight {
+  font-weight: bold;
+}
+
+.tags {
+  margin-top: 20px;
+}
+
+.tags button {
+  position: relative;
+  background: black;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1.2vw;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin: 5px;
+  transition: 0.3s;
+  z-index: 1;
+  border: none; /* Border direkt entfernen */
+}
+
+.tags button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 2px; /* Dicke des Rahmens */
+  background: linear-gradient(45deg, #3f5efb, #fc466b); /* Farbverlauf */
+  border-radius: 4px; /* Optional, abgerundete Ecken */
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude; 
+  -webkit-mask-composite: destination-out; 
+  z-index: -1;
+}
+
+.tags button:hover {
+  background-color: #0d32e7;
+  color: white;
+}
+
+/* sticky-cards-css */
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+
+
+.sticky-container {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90vh
+}
+
+
+section {
+  width: 100%;
+  height: 100%;
+}
+
+
+.hero h1 {
+  position: absolute;
+  width: 100%;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-weight: 400;
+  font-size: 200px;
+  color: rebeccapurple;
+  letter-spacing: -8px;
+  line-height: 90%;
+}
+
+.card.scroll {
+  position: relative;
+}
+
+.img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  width: 80%;
+  height: 80%;
+}
+
+.footer-sticky {
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.footer-sticky h1 {
+  font-size: 48px;
+  font-weight: 400;
+  letter-spacing: -2px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  .sticky {
+    background-color: red;
+  height: 400vh;
+  margin-top: 1750px;
+
+  
+
+  }
+
+
+
+.sticky-header {
+  position: relative;
+
+ 
+}
+
+
+
+.card-service {
+  position: absolute;
+  z-index: 20;
+  top: 10%;
+  left: 100%;
+  width: 325px;
+  height: 500px;
+  background-color: #000;
+  border-radius: 1em;
+  padding: 0.5em;
+  will-change: transform;
+  z-index: 2;
+}
+
+.card-service .card-img {
+  width: 100%;
+  height: 200px;
+  border-radius: 0.5em;
+  overflow: hidden;
+}
+
+.card-content {
+  width: 100%;
+  height: 275px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #fff;
+  padding: 0.5em;
+}
+
+.card-content h2 {
+  font-size: 42px;
+  font-weight: lighter;
+  letter-spacing: -0.005em;
+}
+
+.card-content p {
+  font-size: 20px;
+  font-weight: lighter;
+  letter-spacing: -0.005em;
+}
+
+@media (max-width: 900px) {
+  .nav-items {
+    justify-content: flex-end;
+  }
+}
+
+/* lenis smooth scroll */
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}

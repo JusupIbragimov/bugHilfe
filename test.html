@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>nach coden</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="menu.css">
+
+</head>
+<body>
+
+
+    <div class="logo">
+        <a href="#">Test</a>
+      </div>
+      <div class="menu-toggle closed">
+        <div class="menu-toggle-icon">
+          <div class="hamburger">
+            <div class="menu-bar" data-position="top"></div>
+            <div class="menu-bar" data-position="bottom"></div>
+          </div>
+        </div>
+        <div class="menu-copy">
+          <p>Menu</p>
+        </div>
+      </div>
+  
+      <div class="menu">
+        <div class="col col-1">
+          <div class="menu-logo">
+            <a href="#">Test</a>
+          </div>
+        </div>
+        <div class="col col-2">
+          <div class="link">
+            <a href="#">Home</a>
+          </div>
+          <div class="link">
+            <a href="#">About</a>
+          </div>
+          <div class="link">
+            <a href="#">Work</a>
+          </div>
+          <div class="link">
+            <a href="#">Contact</a>
+          </div>
+          <div class="video-wrapper">
+            <video autoplay muted loop>
+              <source src="video.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <div class="socials">
+            <div class="sub-col">
+              <p>Facebook</p>
+            </div>
+            <div class="sub-col">
+              <p>Instagram</p>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- GSAP -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+      <script>
+        const menuToggle = document.querySelector(".menu-toggle");
+        const menu = document.querySelector(".menu");
+        const menuLinks = document.querySelectorAll(".link");
+        const socials = document.querySelectorAll(".socials p");
+        const videoWrapper = document.querySelector(".video-wrapper");
+  
+        // Animation Timeline
+        const tl = gsap.timeline({ paused: true });
+  
+        // Open animation
+        tl.to(menu, {
+          clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+          duration: 1,
+          ease: "power2.inOut",
+        })
+          .to(
+            menuLinks,
+            {
+              opacity: 1,
+              y: 0,
+              stagger: 0.1,
+              duration: 0.5,
+              ease: "power2.out",
+            },
+            "-=0.5"
+          )
+          .to(
+            socials,
+            {
+              opacity: 1,
+              y: 0,
+              stagger: 0.1,
+              duration: 0.5,
+              ease: "power2.out",
+            },
+            "-=0.5"
+          )
+          .to(
+            videoWrapper,
+            {
+              clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+              duration: 1,
+              ease: "power2.out",
+            },
+            "-=0.7"
+          );
+  
+        // Toggle the menu
+        menuToggle.addEventListener("click", () => {
+          menuToggle.classList.toggle("opened");
+  
+          if (menuToggle.classList.contains("opened")) {
+            tl.play();
+          } else {
+            tl.reverse();
+          }
+        });
+      </script>
+  
+
+
+    <section class="container">
+        <div class="text-layer">
+          <span>STORYTELLING</span>
+          <span>DELIGHT</span>
+          <span>PROCESS</span>
+          <span>VISUAL DESIGN</span>
+          <span>IDENTITY</span>
+          <span>PRODUCT</span>
+          <span>MOTION</span>
+          <span>QUANTITATIVE</span>
+          <span>USER JOURNEYS</span>
+          <span>UX</span>
+          <span>ACCESSIBILITY</span>
+          <span>WORKFLOW</span>
+          <span>WEB</span>
+          <span>TYPOGRAPHY</span>
+        </div>
+        <div class="footer-text">
+          <h1>DESIGN IS A JOURNEY.</h1>
+          <p>We make it <span class="highlight">BREEZY.</span></p>
+          <div class="tags">
+            <button>Test</button>
+            <button>Test</button>
+            <button>Test</button>
+            <button class="highlight">Test</button>
+          </div>
+        </div>
+      </section>
+
+
+
+
+  <div class="sticky-container">
+    <section class="hero pinned">
+      <h1>Schau dir diese coolen<br />Projekte an</h1>
+    </section>
+
+    <section class="card pinned">
+      <div class="img"><img src="./assets/img1.jpg" alt="" /></div>
+    </section>
+
+    <section class="card pinned">
+      <div class="img"><img src="./assets/img2.jpg" alt="" /></div>
+    </section>
+
+    <section class="card pinned">
+      <div class="img"><img src="./assets/img3.jpg" alt="" /></div>
+    </section>
+
+    <section class="card scroll">
+      <div class="img"><img src="./assets/img6.jpg" alt="" /></div>
+    </section>
+
+    <section class="footer-sticky"><h1>Footer</h1></section>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <div class="sticky">
+    <div class="sticky-header">
+    </div>
+
+
+
+  <div class="card-service">
+    <div class="card-img"><img src="./assets/img1.jpg" alt="" /></div>
+    <div class="card-content">
+      <div class="card-title"><h2>Immersive Training Simulations</h2></div>
+      <div class="card-description">
+        <p>
+          Revolutionize hands-on learning with lifelike training
+          environments, enhancing skill development and retention.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="card-service">
+    <div class="card-img"><img src="./assets/img2.jpg" alt="" /></div>
+    <div class="card-content">
+      <div class="card-title"><h2>Virtual Design Collaboration</h2></div>
+      <div class="card-description">
+        <p>
+          Enable remote teams to co-create in 3D spaces, speeding up design
+          iterations and boosting innovation.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="card-service">
+    <div class="card-img"><img src="./assets/img3.jpg" alt="" /></div>
+    <div class="card-content">
+      <div class="card-title"><h2>Immersive Product Demos</h2></div>
+      <div class="card-description">
+        <p>
+          Showcase products in a fully interactive, 360-degree experience,
+          making presentations more engaging and memorable.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="card-service">
+    <div class="card-img"><img src="./assets/img4.jpg" alt="" /></div>
+    <div class="card-content">
+      <div class="card-title"><h2>Remote Healthcare Solutions</h2></div>
+      <div class="card-description">
+        <p>
+          Empower healthcare professionals with virtual consultations and
+          remote diagnostics in immersive 3D environments.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="card-service">
+    <div class="card-img"><img src="./assets/img1.jpg" alt="" /></div>
+    <div class="card-content">
+      <div class="card-title"><h2>Interactive Entertainment</h2></div>
+      <div class="card-description">
+        <p>
+          Deliver a new dimension of gaming and entertainment with fully
+          immersive and interactive virtual experiences.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+  <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="newscript.js"></script>
+  <script src="parallax.js"></script>
+<script src="cards-service.js"></script>
+  
+</body>
+</html>
